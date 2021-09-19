@@ -5,7 +5,7 @@ export const useForms = <T extends Object>(form: T) => {
 
     const handleInput = (value: string, field: keyof T) => {
         setState({
-            ...form,
+            ...state,
             [field]: value
         })
     }
