@@ -1,8 +1,10 @@
-import { useState } from 'react';
 import { useForms } from '../hooks/useForms';
 
 export const Forms = () => {
-    const {formulario, handleInput} = useForms();
+    const {form, handleInput} = useForms({
+        email: '',
+        password: ''
+    });
 
     return (
         <>
@@ -11,18 +13,18 @@ export const Forms = () => {
                 type="text"
                 className="form-control"
                 placeholder="Email"
-                value={formulario.email}
+                value={form.email}
                 onChange={ ({target}) => handleInput(target.value, 'email') }
                 />
             <input
                 type="text"
                 className="form-control mb-2 mt-2"
                 placeholder="Password"
-                value={formulario.password}
+                value={form.password}
                 onChange={ ({target}) => handleInput(target.value, 'password') }
             />
             <code>
-                <pre>{JSON.stringify(formulario, null, 2)}</pre>
+                <pre>{JSON.stringify(form, null, 2)}</pre>
             </code>
         </>
     )

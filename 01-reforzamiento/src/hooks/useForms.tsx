@@ -1,20 +1,17 @@
 import { useState } from 'react'
 
-export const useForms = () => {
-    const [formulario, setFormulario] = useState({
-        email: 'test@test.com',
-        password: '123456'
-    })
+export const useForms = <T extends Object>(form: T) => {
+    const [state, setState] = useState(form)
 
-    const handleInput = (value: string, field: string) => {
-        setFormulario({
-            ...formulario,
+    const handleInput = (value: string, field: keyof T) => {
+        setState({
+            ...form,
             [field]: value
         })
     }
 
     return {
-        formulario,
+        form: state,
         handleInput
     }
 }
