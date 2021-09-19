@@ -1,5 +1,5 @@
 
-import { Usuarios } from './components/Usuarios';
+import { Forms } from './components/Forms';
 
 
 export const App = () => {
@@ -7,7 +7,7 @@ export const App = () => {
     <div className="mt-2">
       <h1>Introduccion a TypeScript</h1>
       <hr />
-     <Usuarios/>
+     <Forms/>
     </div>
   )
 }
